@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+      <div id="poop">
+      <div class="form-check">
+          <input class="form-check-input checkbox" type="checkbox" name="OptionIds" value="9" id="OptionIds[1]">
+          <label class="form-check-label" for="OptionIds[1]">
+              Seat for Cab 1 - $4
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input checkbox" type="checkbox" name="OptionIds" value="10" id="OptionIds[2]">
+          <label class="form-check-label" for="OptionIds[2]">
+              Radio for Cab1 - $125
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input checkbox" type="checkbox" name="OptionIds" value="11" id="OptionIds[3]">
+          <label class="form-check-label" for="OptionIds[3]">
+              Tinted Windows for Cab 12 - $500
+          </label>
+      </div>
+      </div>
+      <div id="t">Values Here</div>
+    </body>
+    <script>
+    $(document).ready(function () {
+
+  function updateTotals() {
+    var allVals = [];
+    $('.form-check :checked').each(function() {
+      allVals.push(this.value);
+    });
+    $('#t').html(allVals);
+    }
+
+  $(".checkbox").change(function() {updateTotals()});
+});
+</script>
+</html>
